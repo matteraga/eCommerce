@@ -5,7 +5,11 @@ import {Category} from "../models/category";
 @Injectable()
 export class ProductService {
   products: Product[] = [
-    new Product(1, 'PS5', 'Una tra le migliori console di sempre', Category.Console, 499.99, ['ps5.png'])
+    new Product(1, 'PS5', 'Una tra le migliori console di sempre', Category.Console, 499.99, ['ps5.png']),
+    new Product(2, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(3, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(4, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(5, 'NVIDIA RTX 3080', 'La nuova scheda video di NVIDIA', Category.Pc, 699.99, ['3080.jpeg']),
   ];
 
   getById(id: number): Product | undefined {
