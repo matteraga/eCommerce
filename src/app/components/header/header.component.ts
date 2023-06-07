@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Category } from 'src/app/models/category';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +10,19 @@ import { Component } from '@angular/core';
 export class HeaderComponent 
 {
   searchString : string = '';
+  title = 'eCommerce';
+  cat = this.getCategories();
 
+  constructor(private productService : ProductService){}
+
+  search() : void
+  {
+    this.productService.getProductsByName(this.searchString);
+  }
+
+  getCategories() : Category[]
+  {
+    return this.productService.getCategories();
+  }
   
 }
