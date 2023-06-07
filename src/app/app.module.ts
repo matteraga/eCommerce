@@ -11,6 +11,7 @@ import {ProductComponent} from "./components/product/product.component";
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductPaginationComponent } from './components/product-pagination/product-pagination.component';
+import { CartProductComponent } from './components/cart-product/cart-product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductPaginationComponent } from './components/product-pagination/prod
     ProductComponent,
     FooterComponent,
     HomeComponent,
-    ProductPaginationComponent
+    ProductPaginationComponent,
+    CartProductComponent
   ],
   imports: [
     BrowserModule,
