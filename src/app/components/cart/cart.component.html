@@ -1,19 +1,25 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-8">
-            <h1>Cart</h1>
+            <h1>Carrello</h1>
+            <app-cart-product></app-cart-product>
+            <app-cart-product></app-cart-product>
+            <app-cart-product></app-cart-product>
+            <app-cart-product></app-cart-product>
+            <app-cart-product></app-cart-product>
+            <app-cart-product></app-cart-product>
             <app-cart-product></app-cart-product>
         </div>
-        <div class="col-4 vh-50">
-            <div class="p-3 bg-light rounded-3 text-center">
-                <div class="alert alert-primary text-center fw-semibold">
+        <div class="col-4 side h-100 position-fixed top-0 end-0 bg-light">
+            <div class="container text-center">
+                <div class="alert alert-warning text-center fw-semibold">
                     Checkout
                 </div>
                 <table class="table table-light w-75 m-auto mb-3">
                     <tbody>
                         <tr>
                             <td>Subtotale</td>
-                            <td>0,00 €</td>
+                            <td>{{totale}} €</td>
                         </tr>
                         <tr>
                             <td>Spedizione</td>
@@ -25,7 +31,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn btn-success w-75">
+                <button type="button" class="btn btn-success w-75">
                     Conferma
                 </button>
             </div>

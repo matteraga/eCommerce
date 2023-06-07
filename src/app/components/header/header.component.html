@@ -1,15 +1,25 @@
-<div class="container">
-    <div class="d-flex justify-content-between m-3">
-        <a [routerLink]="'/home'" class="text-decoration-none text-dark"><h1>{{title}}</h1></a>
-        <div class="rounded m-2 d-flex  ">
-            <input type="search" class="form-control searchBar" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <select class="select">
-                <option hidden>Categoria</option>
-                <ng-container *ngFor="let p of cat">
-                    <option>{{p}}</option>
-                </ng-container>
-            </select>
+<nav class="navbar navbar-expand-lg bg-light border-bottom border-bottom-light position-sticky sticky-top z-3"
+    data-bs-theme="light">
+    <div class="container-fluid">
+        <a [routerLink]="'/'" class="navbar-brand">{{title}}</a>
+        <button class="navbar-toggler my-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline input-group m-auto w-auto">
+                <select class="input-group-text" id="search-addon">
+                    <option hidden>Categoria</option>
+                    <ng-container *ngFor="let p of cat">
+                        <option>{{p}}</option>
+                    </ng-container>
+                </select>
+                <input type="text" class="form-control search-input" placeholder="Cosa vuoi acquistare?" aria-describedby="search-addon">
+            </form>
+            <a [routerLink]="'/cart'" class="btn btn-primary">
+                <i class="bi bi-cart me-2"></i>
+                <span class="badge bg-secondary">1</span>
+            </a>
         </div>
-        <a [routerLink]="'/cart'">Carrello</a>
     </div>
-</div>
+</nav>

@@ -1,11 +1,9 @@
-.searchBar {
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 50px 0px 0px 50px;
+.search-input {
+    width: 500px;
 }
-  
-.select {
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 0px 50px 50px 0px;
+
+@media screen and (max-width: 992px) {
+    .search-input {
+        width: 250px;
+    }
 }
