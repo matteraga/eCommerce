@@ -8,13 +8,17 @@ import {ProductService} from "./services/product.service";
 import { CartService } from './services/cart.service';
 import { CartComponent } from './components/cart/cart.component';
 import {ProductComponent} from "./components/product/product.component";
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
