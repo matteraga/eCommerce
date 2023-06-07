@@ -4,4 +4,27 @@
       <app-product class="col-3" [product]="p"></app-product>
     </ng-container>
   </div>
+  <div>
+    <!-- TODO: Disable buttons & add number of page - 1 -->
+    <!-- Navigator < 1 2 3 > -->
+    <button
+      [class.disabled]="page <= 1"
+      class="btn btn-primary" (click)="prevPage()"
+    >
+      <
+    </button>
+    {{ page }}
+    <button class="btn btn-primary" (click)="goToPage(page + 1)">
+      {{ page + 1 }}
+    </button>
+    <button class="btn btn-primary" (click)="goToPage(page + 2)">
+      {{ page + 2 }}
+    </button>
+    <button
+      [class.disabled]="page <= 1"
+      class="btn btn-primary" (click)="nextPage()"
+    >
+      >
+    </button>
+  </div>
 </div>
