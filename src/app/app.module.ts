@@ -8,13 +8,15 @@ import {ProductService} from "./services/product.service";
 import { CartService } from './services/cart.service';
 import { CartComponent } from './components/cart/cart.component';
 import {ProductComponent} from "./components/product/product.component";
+import { ProductPaginationComponent } from './components/product-pagination/product-pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    ProductPaginationComponent
   ],
   imports: [
     BrowserModule,
