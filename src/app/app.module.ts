@@ -7,12 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import {ProductService} from "./services/product.service";
 import { CartService } from './services/cart.service';
 import { CartComponent } from './components/cart/cart.component';
+import {ProductComponent} from "./components/product/product.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CartComponent
+    CartComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

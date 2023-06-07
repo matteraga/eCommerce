@@ -1,0 +1,8 @@
+<div>
+  <ng-container *ngIf="product; else noProduct">
+    <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata">
+  </ng-container>
+  <ng-template #noProduct>
+    <span>Prodotto non trovato</span>
+  </ng-template>
+</div>
