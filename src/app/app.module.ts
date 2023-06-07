@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductPaginationComponent } from './components/product-pagination/product-pagination.component';
 import { CartProductComponent } from './components/cart-product/cart-product.component';
 import { QuantityComponent } from './components/quantity/quantity.component';
+import { SlideProductsComponent } from './components/slide-products/slide-products.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { QuantityComponent } from './components/quantity/quantity.component';
     HomeComponent,
     ProductPaginationComponent,
     CartProductComponent,
-    QuantityComponent
+    QuantityComponent,
+    SlideProductsComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
