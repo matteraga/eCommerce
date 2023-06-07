@@ -6,9 +6,9 @@ export enum Category
     Monitor = 'Monitor',
     Tablet = 'Tablet',
     BatteryCharger = 'Carica batterie',
-    Phone = 'Telefoni',
-    Keyboard= 'Tastiere',
+    Smartphone = 'Telefoni',
+    Keyboard = 'Tastiere',
     Mouse = 'Mouse',
     Laptop = 'Portatili',
     Console = 'Console'
-} 
+}
