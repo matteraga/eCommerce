@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Product} from "../../models/product";
 import {ProductService} from "../../services/product.service";
+import {Category} from "../../models/category";
 
 @Component({
   selector: 'app-product',
@@ -8,9 +9,12 @@ import {ProductService} from "../../services/product.service";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  product: Product | undefined;
+  product: Product | undefined = undefined;
 
+  // todo remove this
   constructor(private productService: ProductService) {
-    this.product = this.productService.getById(1);
+    this.product = this.productService.getRandomProduct(Category.Console);
   }
+
+  protected readonly undefined = undefined;
 }

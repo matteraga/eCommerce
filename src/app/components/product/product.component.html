@@ -1,6 +1,13 @@
-<div>
+<div class="d-flex flex-column container">
   <ng-container *ngIf="product; else noProduct">
-    <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata">
+    <a [routerLink]="['/products', product.id]" class="text-decoration-none text-dark">
+      <div class="object-fit-cover ratio-1x1"> <!-- TODO -->
+        <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="rounded">
+      </div>
+      <span>{{product.category}}</span>
+      <h4>{{product.name}}</h4>
+      <span>€ {{product.price}}</span>
+    </a>
   </ng-container>
   <ng-template #noProduct>
     <span>Prodotto non trovato</span>
