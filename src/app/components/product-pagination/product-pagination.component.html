@@ -1,1 +1,7 @@
-<p>product-pagination works!</p>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let p of products">
+      <app-product class="col-3" [product]="p"></app-product>
+    </ng-container>
+  </div>
+</div>
