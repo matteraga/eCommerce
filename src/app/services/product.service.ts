@@ -4,7 +4,9 @@ import {Category} from "../models/category";
 
 @Injectable()
 export class ProductService {
-  products: Product[] = [];
+  products: Product[] = [
+    new Product(1, 'PS5', 'Una tra le migliori console di sempre', Category.Console, 499.99, ['ps5.png'])
+  ];
 
   getById(id: number): Product | undefined {
     return this.products.find(p => p.id == id);
