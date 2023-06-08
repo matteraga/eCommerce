@@ -10,18 +10,18 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent {
-  
+  id: number = 0;
   product? : Product;
 
   suggestedProducts? : Product[];
+  nSuggestedProducts: number = 6;
 
-  id: number = 0;
 
   constructor(private productService: ProductService, private routerService: ActivatedRoute, private cartService: CartService)
   {
     this.id = routerService.snapshot.params['id'];
     this.product = this.productService.getById(this.id);
-    if(this.product) this.suggestedProducts = this.productService.getProductsByCategory(this.product.category,1,5);
+    if(this.product) this.suggestedProducts = this.productService.getProductsByCategory(this.product.category,1,this.nSuggestedProducts);
   }
 
 }

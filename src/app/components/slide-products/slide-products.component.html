@@ -1,10 +1,8 @@
-<!--TODO: fix colore fuori dai bordi e card che escono dallo slide-->
-
 <div class="container">
   <ng-container *ngIf="category && products && products.length > 0; else noProducts">
     <div class="d-flex flex-column">
       <div class="align-self-end">
-        <a [routerLink]="['/categories', this.category]" class="text-decoration-none"><strong>Mostra tutti</strong></a>
+        <a [routerLink]="['/categories', this.category]" class="text-decoration-none"><strong>Mostra tutti <i class="bi bi-arrow-right"></i></strong></a>
       </div>
       <div class="row justify-content-between">
         <ng-container *ngFor="let p of products">
