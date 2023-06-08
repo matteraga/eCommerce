@@ -14,11 +14,7 @@ export class HeaderComponent {
   title = 'eCommerce';
   categories = this.getCategories();
 
-  numberOfItems: number = 0;
-
-  constructor(private productService: ProductService, private cartService: CartService, private router: Router) {
-    this.numberOfItems = this.cartService.numberOfItems;
-  }
+  constructor(private productService: ProductService, public cartService: CartService, private router: Router) { }
 
   search(): void {
     this.router.navigate(['/search', this.searchString]);

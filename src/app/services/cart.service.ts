@@ -15,12 +15,13 @@ export class CartService {
     public set numberOfItems(n: number) {
         this._numberOfItems = n;
     }
-    
-    constructor(private productService: ProductService) { }
+
+    constructor(private productService: ProductService) {
+        this.updateNumberOfItems()
+    }
 
     private updateNumberOfItems() {
         this.numberOfItems = this.cart.reduce((sum, current) => sum + current[1], 0);
-        console.log(this._numberOfItems)
     }
 
     private find(id: number): number {
