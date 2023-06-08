@@ -9,16 +9,17 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  categories: Category[] = [Category.Console, Category.Smartphone];
-  private offertId : number = 2;  
-  products : Product[][] = [];
-  offertProduct? : Product;
+  private offerId : number = 2;
+  offerProduct? : Product;
+
+  featuredCategories: Category[] = [Category.Console, Category.Smartphone];
+  featuredProducts : Product[][] = [];
+
   constructor(private productService : ProductService)
   {
-    for(let c of this.categories)
-    {
-      this.products.push(this.productService.getProductsByCategory(c,1,4));
-    }
-    this.offertProduct = this.productService.getById(this.offertId);;
+    for(let c of this.featuredCategories)
+      this.featuredProducts.push(this.productService.getProductsByCategory(c, 1, 4));
+
+    this.offerProduct = this.productService.getById(this.offerId);
   }
 }
