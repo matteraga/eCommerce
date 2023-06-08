@@ -15,6 +15,9 @@ import { CartProductComponent } from './components/cart-product/cart-product.com
 import { QuantityComponent } from './components/quantity/quantity.component';
 import { SlideProductsComponent } from './components/slide-products/slide-products.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { CategoryResultComponent } from './components/category-result/category-result.component';
+import { PageNavigatorComponent } from './components/page-navigator/page-navigator.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CartProductComponent,
     QuantityComponent,
     SlideProductsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SearchResultComponent,
+    CategoryResultComponent,
+    PageNavigatorComponent
   ],
   imports: [
     BrowserModule,
