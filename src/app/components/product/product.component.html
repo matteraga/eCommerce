@@ -1,7 +1,7 @@
 <div class="d-flex flex-column rounded bg-light rounded border border-secondary shadow-sm mb-4">
   <ng-container *ngIf="product; else noProduct">
-    <a [routerLink]="['/products', product.id]" class="text-decoration-none text-dark">
-      <div class="object-fit-cover ratio-1x1"> <!-- TODO -->
+    <a [href]="'/products/' + product.id" class="text-decoration-none text-dark">
+      <div class="object-fit-cover ratio-1x1"> <!-- TODO mettere che tutte le immagini siano grandi uguali (e in caso vengano tagliate) -->
         <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="container p-0 rounded">
       </div>
       <div class="p-3 border-top border-secondary">
