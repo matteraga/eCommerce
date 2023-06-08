@@ -7,3 +7,9 @@ body {
 .footer {
     height: 170px;
 }
+
+.special-gradient {
+  background: linear-gradient(to right top, #7A53F5 0%, #57bcf3 50%, #57bcf3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
