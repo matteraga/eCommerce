@@ -76,6 +76,6 @@ export class CartService {
     }
 
     getTotalCost(): number {
-        return this.cart.reduce((sum, current) => sum + (this.productService.getById(current[0])!.price * current[1]), 0);
+        return this.cart.reduce((sum, current) => sum + (((this.productService.getById(current[0])!.offertPrice == undefined) ? this.productService.getById(current[0])!.price : this.productService.getById(current[0])!.offertPrice!) * current[1]), 0);
     }
 }
