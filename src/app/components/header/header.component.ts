@@ -1,34 +1,30 @@
 import { Component } from '@angular/core';
 import { Category } from 'src/app/models/category';
 import { CartService } from 'src/app/services/cart.service';
-import {Router} from "@angular/router";
-import {ProductService} from "../../services/product.service";
+import { Router } from "@angular/router";
+import { ProductService } from "../../services/product.service";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent
-{
-  searchString : string = '';
+export class HeaderComponent {
+  searchString: string = '';
   title = 'eCommerce';
   categories = this.getCategories();
-  numberOfItems = this.getItemsInCart();
 
-  constructor(private productService: ProductService, private cartService: CartService, private router: Router){}
+  numberOfItems: number = 0;
 
-  search() : void
-  {
+  constructor(private productService: ProductService, private cartService: CartService, private router: Router) {
+    this.numberOfItems = this.cartService.numberOfItems;
+  }
+
+  search(): void {
     this.router.navigate(['/search', this.searchString]);
   }
 
-  getCategories() : Category[]
-  {
+  getCategories(): Category[] {
     return this.productService.getCategories();
-  }
-
-  getItemsInCart(): number {
-    return this.cartService.getTotalQuantity();
   }
 }

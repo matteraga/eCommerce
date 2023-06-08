@@ -8,7 +8,20 @@ export class CartService {
         [1, 2], [2, 2]
     ];
 
+    private _numberOfItems: number = 0;
+    public get numberOfItems() {
+        return this._numberOfItems;
+    }
+    public set numberOfItems(n: number) {
+        this._numberOfItems = n;
+    }
+    
     constructor(private productService: ProductService) { }
+
+    private updateNumberOfItems() {
+        this.numberOfItems = this.cart.reduce((sum, current) => sum + current[1], 0);
+        console.log(this._numberOfItems)
+    }
 
     private find(id: number): number {
         return this.cart.findIndex(product => product[0] == id);
@@ -21,6 +34,7 @@ export class CartService {
         } else {
             this.changeQuantity(id, this.cart.at(index)![1] + quantity)
         }
+        this.updateNumberOfItems()
     }
 
     remove(id: number) {
@@ -29,6 +43,7 @@ export class CartService {
             this.cart.splice(index, 1)
             //this.changeQuantity(id, 0);
         }
+        this.updateNumberOfItems()
     }
 
     changeQuantity(id: number, quantity: number) {
@@ -40,6 +55,12 @@ export class CartService {
                 product[1] = quantity
             }
         }
+        this.updateNumberOfItems()
+    }
+
+    clear() {
+        this.cart = [];
+        this.updateNumberOfItems()
     }
 
     getProducts(): (Product | undefined)[] {
@@ -51,10 +72,6 @@ export class CartService {
     getQuantity(id: number): number {
         let index = this.find(id);
         return this.cart.at(index)![1];
-    }
-
-    getTotalQuantity(): number {
-        return this.cart.reduce((sum, current) => sum + current[1], 0);
     }
 
     getTotalCost(): number {
