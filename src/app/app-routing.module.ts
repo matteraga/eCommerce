@@ -9,14 +9,14 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'products/:id', component: ProductPageComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'search/:search', component: SearchResultComponent },
-  { path: 'categories/:category', component: CategoryResultComponent },
-  { path: 'about', component: AboutComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '', title: "Home", component: HomeComponent },
+  { path: 'products/:id', title: "Dettagli prodotto", component: ProductPageComponent },
+  { path: 'home', title: "Home", component: HomeComponent },
+  { path: 'cart', title: "Carrello", component: CartComponent },
+  { path: 'search/:search', title: "Ricerca", component: SearchResultComponent },
+  { path: 'categories/:category', title: "Prodotti per categoria", component: CategoryResultComponent },
+  { path: 'about', title: "Chi siamo", component: AboutComponent },
+  { path: '**', title: "404 Pagina non trovata", component: NotFoundComponent }
 ];
 
 @NgModule({
