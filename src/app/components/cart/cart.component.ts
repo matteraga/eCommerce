@@ -13,10 +13,10 @@ export class CartComponent {
 
   constructor(private cartService: CartService) { 
     this.update();
-    this.totalCost = this.cartService.getTotalCost();
   }
 
   update() {
     this.products = this.cartService.getProducts();
+    this.totalCost = this.cartService.getTotalCost();
   }
 }

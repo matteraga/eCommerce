@@ -23,6 +23,7 @@ export class CartProductComponent {
 
   updateQuantity(quantity: number) {
     this.cartService.changeQuantity(this.product!.id, quantity);
+    this.updateEvent.emit();
   }
 
   getQuantity() {

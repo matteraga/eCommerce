@@ -6,6 +6,7 @@ import {NotFoundComponent} from "./components/not-found/not-found.component";
 import {SearchResultComponent} from "./components/search-result/search-result.component";
 import {CategoryResultComponent} from "./components/category-result/category-result.component";
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'search/:search', component: SearchResultComponent },
   { path: 'categories/:category', component: CategoryResultComponent },
+  { path: 'about', component: AboutComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

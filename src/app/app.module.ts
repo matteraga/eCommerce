@@ -20,6 +20,7 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { CategoryResultComponent } from './components/category-result/category-result.component';
 import { PageNavigatorComponent } from './components/page-navigator/page-navigator.component';
 import {FormsModule} from "@angular/forms";
+import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     SearchResultComponent,
     CategoryResultComponent,
     PageNavigatorComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
