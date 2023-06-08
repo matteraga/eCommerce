@@ -6,10 +6,9 @@
                 <app-cart-product [product]="prod" (updateEvent)="update()"></app-cart-product>
             </ng-container>
             <ng-container *ngIf="products.length == 0">
-                <div class="alert alert-info text-center">
-                    <i class="bi bi-cart fs-1"></i>
-                    <br>
-                    Il carrello è vuoto
+                <div class="container-fluid h-100 d-flex align-items-center justify-content-center flex-column fs-1">
+                    <i class="bi bi-cart-x"></i>
+                    Il carello è vuoto
                 </div>
             </ng-container>
         </div>
@@ -26,7 +25,14 @@
                         </tr>
                         <tr>
                             <td>Spedizione</td>
-                            <td>€5,99</td>
+                            <td>
+                                <ng-container *ngIf="products.length == 0">
+                                    €0.00
+                                </ng-container>
+                                <ng-container *ngIf="products.length != 0">
+                                    €5.99
+                                </ng-container>
+                            </td>
                         </tr>
                         <tr>
                             <td>Totale</td>
@@ -35,7 +41,7 @@
                     </tbody>
                 </table>
                 <button type="button" class="btn btn-success w-75" data-bs-toggle="modal" data-bs-target="#succesModal"
-                    (click)="clear()">
+                    (click)="clear()" [disabled]="disabled">
                     Conferma
                 </button>
             </div>
