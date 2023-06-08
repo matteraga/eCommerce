@@ -1,4 +1,6 @@
 <div class="container">
+    <h1>In Offerta</h1>
+    <app-product-details [product]="offertProduct"></app-product-details>
     <ng-container *ngFor="let p of products; index as i">
         <h2>{{categories[i]}}</h2>
         <app-slide-products [products]="p" [category]="categories[i]"></app-slide-products>

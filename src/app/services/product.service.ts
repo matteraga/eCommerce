@@ -6,7 +6,7 @@ import {Category} from "../models/category";
 export class ProductService {
   products: Product[] = [
     new Product(1, 'PS5', 'Una tra le migliori console di sempre', Category.Console, 499.99, ['ps5.png']),
-    new Product(2, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(2, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg'], 499.99),
     new Product(3, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
     new Product(4, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
     new Product(5, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
