@@ -14,4 +14,16 @@ export class SlideProductsComponent
 
   @Input()
   category? : Category;
+
+  private totalCols: number = 12;
+  private productCol: number = 3;
+  private maxCols: number = 3;
+
+  getProductCol(): number {
+    if (this.products == undefined)
+      return 0;
+
+    this.productCol = Math.floor(this.totalCols / this.products.length);
+    return Math.min(this.productCol, this.maxCols);
+  }
 }
