@@ -23,8 +23,9 @@
                             <button class="btn btn-primary" (click)="addProduct()">Aggiungi</button>
                         </div>
                         <div class="col">
-                            <app-quantity></app-quantity></div>
+                            <app-quantity (quantityEvent)="changeQuantity($event)"></app-quantity>
                         </div>
+                    </div>
                 </div> 
             </div>
     </ng-container>
