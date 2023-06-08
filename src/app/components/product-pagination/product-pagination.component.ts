@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product";
-import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'app-product-pagination',
@@ -12,7 +11,10 @@ export class ProductPaginationComponent {
   products?: Product[];
 
   @Input()
-  searchString: string = '';
+  searchString?: string;
+
+  @Input()
+  category?: string;
 
   @Input()
   page: number = 1;
@@ -22,8 +24,6 @@ export class ProductPaginationComponent {
 
   @Output()
   changePageEvent: EventEmitter<any> = new EventEmitter();
-
-  constructor(private productService: ProductService) {}
 
   goToPage(page: number) {
     this.page = page;

@@ -2,7 +2,7 @@
   <ng-container *ngIf="category && products && products.length > 0; else noProducts">
     <div class="d-flex flex-column">
       <div class="align-self-end">
-        <a [routerLink]="['/categories', this.category]" class="text-decoration-none"><strong>Mostra tutti <i class="bi bi-arrow-right"></i></strong></a>
+        <a [routerLink]="['/shop/categories', this.category]" class="text-decoration-none"><strong>Mostra tutti <i class="bi bi-arrow-right"></i></strong></a>
       </div>
       <div class="row justify-content-between">
         <ng-container *ngFor="let p of products">

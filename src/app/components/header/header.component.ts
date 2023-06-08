@@ -17,7 +17,10 @@ export class HeaderComponent {
   constructor(private productService: ProductService, public cartService: CartService, private router: Router) { }
 
   search(): void {
-    this.router.navigate(['/search', this.searchString]);
+    if (this.searchString == '')
+      this.router.navigate(['/shop']);
+    else
+      this.router.navigate(['/shop', this.searchString]);
   }
 
   getCategories(): Category[] {

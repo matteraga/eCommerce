@@ -8,25 +8,18 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })
-export class SearchResultComponent implements OnInit {
+export class SearchResultComponent {
   products: Product[];
   searchString: string;
   page: number;
   maxPage: number;
 
-
   constructor(private productService: ProductService, private route: ActivatedRoute) {
-    this.searchString = this.route.snapshot.params['search'];
+    this.searchString = this.route.snapshot.params['search'] || "";
 
     this.products = this.productService.getProductsByName(this.searchString);
     this.page = 1;
     this.maxPage = this.productService.productPageCount(this.searchString);
-  }
-
-  ngOnInit(): void { // todo
-    this.searchString = this.route.snapshot.params['search'];
-
-    this.products = this.productService.getProductsByName(this.searchString);
   }
 
   changePage(page: number) {

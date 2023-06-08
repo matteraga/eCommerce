@@ -14,8 +14,9 @@ const routes: Routes = [
   { path: 'cart', title: "QuickDeals | Carrello", component: CartComponent },
   { path: 'about', title: "QuickDeals | Chi siamo", component: AboutComponent },
   { path: 'products/:id', title: "QuickDeals | Dettagli prodotto", component: ProductPageComponent },
-  { path: 'search/:search', title: "QuickDeals | Ricerca", component: SearchResultComponent },
-  { path: 'categories/:category', title: "QuickDeals | Prodotti per categoria", component: CategoryResultComponent },
+  { path: 'shop', title: "QuickDeals | Negozio", component: SearchResultComponent },
+  { path: 'shop/categories/:category', title: "QuickDeals | Prodotti per categoria", component: CategoryResultComponent },
+  { path: 'shop/:search', title: "QuickDeals | Ricerca", component: SearchResultComponent },
   { path: '**', title: "QuickDeals | 404 - Pagina non trovata", component: NotFoundComponent }
 ];
 
