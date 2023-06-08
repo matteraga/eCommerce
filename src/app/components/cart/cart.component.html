@@ -1,14 +1,17 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-8">
             <h1>Carrello</h1>
-            <app-cart-product></app-cart-product>
-            <app-cart-product></app-cart-product>
-            <app-cart-product></app-cart-product>
-            <app-cart-product></app-cart-product>
-            <app-cart-product></app-cart-product>
-            <app-cart-product></app-cart-product>
-            <app-cart-product></app-cart-product>
+            <ng-container *ngFor="let prod of products">
+                <app-cart-product [product]="prod" (updateEvent)="update()"></app-cart-product>
+            </ng-container>
+            <ng-container *ngIf="products.length == 0">
+                <div class="alert alert-info text-center">
+                    <i class="bi bi-cart fs-1"></i>
+                    <br>
+                    Il carrello è vuoto
+                </div>
+            </ng-container>
         </div>
         <div class="col-4 side h-100 position-fixed top-0 end-0 bg-light">
             <div class="container text-center">
@@ -19,7 +22,7 @@
                     <tbody>
                         <tr>
                             <td>Subtotale</td>
-                            <td>{{totale}} €</td>
+                            <td>{{totalCost | currency}} €</td>
                         </tr>
                         <tr>
                             <td>Spedizione</td>
