@@ -22,6 +22,7 @@ import { PageNavigatorComponent } from './components/page-navigator/page-navigat
 import {FormsModule} from "@angular/forms";
 import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import {TruncatePipe} from "./pipes/truncate.pipe";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     CategoryResultComponent,
     PageNavigatorComponent,
     ProductPageComponent,
-    AboutComponent
+    AboutComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
