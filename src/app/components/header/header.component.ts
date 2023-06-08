@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Category } from 'src/app/models/category';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -12,8 +13,9 @@ export class HeaderComponent
   searchString : string = '';
   title = 'eCommerce';
   cat = this.getCategories();
+  numberOfItems = this.getItemsInCart();
 
-  constructor(private productService : ProductService){}
+  constructor(private productService : ProductService, private cartService: CartService){}
 
   search() : void
   {
@@ -24,5 +26,8 @@ export class HeaderComponent
   {
     return this.productService.getCategories();
   }
-  
+
+  getItemsInCart(): number {
+    return this.cartService.getTotalQuantity();
+  }
 }
