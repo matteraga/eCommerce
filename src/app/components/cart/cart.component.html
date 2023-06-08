@@ -34,9 +34,25 @@
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-success w-75">
+                <button type="button" class="btn btn-success w-75" data-bs-toggle="modal" data-bs-target="#succesModal">
                     Conferma
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="succesModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h1 class="modal-title fs-5">Ordine confermato</h1>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="bi bi-cart-check"></i>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary w-75" data-bs-dismiss="modal">Chiudi</button>
+                </div>
             </div>
         </div>
     </div>

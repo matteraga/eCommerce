@@ -18,6 +18,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { CategoryResultComponent } from './components/category-result/category-result.component';
 import { PageNavigatorComponent } from './components/page-navigator/page-navigator.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PageNavigatorComponent } from './components/page-navigator/page-navigat
     NotFoundComponent,
     SearchResultComponent,
     CategoryResultComponent,
-    PageNavigatorComponent
+    PageNavigatorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
