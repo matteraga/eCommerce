@@ -4,7 +4,9 @@ import { ProductService } from "./product.service";
 
 @Injectable()
 export class CartService {
-    readonly cart: [id: number, quntity: number][] = []
+    private cart: [id: number, quntity: number][] = [
+        [1, 2], [2, 3]
+    ];
 
     constructor(private productService: ProductService) { }
 
@@ -39,13 +41,22 @@ export class CartService {
         }
     }
 
-    total(): number {
-        let totale = 0;
-        this.cart.forEach(id => totale += (this.productService.getById(id[0])?.price == undefined) ? 0 : this.productService.getById(id[0])!.price)
-        return totale;
+    getProducts(): (Product | undefined)[] {
+        return this.cart.map(
+            prod => this.productService.getById(prod[0])
+        )
     }
 
-    proced() {
+    getQuantity(id: number): number {
+        let index = this.find(id);
+        return this.cart.at(index)![1];
+    }
 
+    getTotalQuantity(): number {
+        return this.cart.reduce((sum, current) => sum + current[1], 0);
+    }
+
+    getTotalCost(): number {
+        return this.cart.reduce((sum, current) => sum + (this.productService.getById(current[0])!.price * current[1]), 0);
     }
 }

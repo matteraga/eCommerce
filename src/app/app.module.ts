@@ -16,6 +16,9 @@ import { QuantityComponent } from './components/quantity/quantity.component';
 import { SlideProductsComponent } from './components/slide-products/slide-products.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { CategoryResultComponent } from './components/category-result/category-result.component';
+import { PageNavigatorComponent } from './components/page-navigator/page-navigator.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     QuantityComponent,
     SlideProductsComponent,
     NotFoundComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SearchResultComponent,
+    CategoryResultComponent,
+    PageNavigatorComponent
   ],
   imports: [
     BrowserModule,
