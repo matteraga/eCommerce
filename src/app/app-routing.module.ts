@@ -9,14 +9,14 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
-  { path: '', title: "Home", component: HomeComponent },
-  { path: 'products/:id', title: "Dettagli prodotto", component: ProductPageComponent },
-  { path: 'home', title: "Home", component: HomeComponent },
-  { path: 'cart', title: "Carrello", component: CartComponent },
-  { path: 'search/:search', title: "Ricerca", component: SearchResultComponent },
-  { path: 'categories/:category', title: "Prodotti per categoria", component: CategoryResultComponent },
-  { path: 'about', title: "Chi siamo", component: AboutComponent },
-  { path: '**', title: "404 Pagina non trovata", component: NotFoundComponent }
+  { path: '', title: "QuickDeals | Home", component: HomeComponent },
+  { path: 'home', title: "QuickDeals | Home", component: HomeComponent },
+  { path: 'cart', title: "QuickDeals | Carrello", component: CartComponent },
+  { path: 'about', title: "QuickDeals | Chi siamo", component: AboutComponent },
+  { path: 'products/:id', title: "QuickDeals | Dettagli prodotto", component: ProductPageComponent },
+  { path: 'search/:search', title: "QuickDeals | Ricerca", component: SearchResultComponent },
+  { path: 'categories/:category', title: "QuickDeals | Prodotti per categoria", component: CategoryResultComponent },
+  { path: '**', title: "QuickDeals | 404 - Pagina non trovata", component: NotFoundComponent }
 ];
 
 @NgModule({
