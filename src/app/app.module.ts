@@ -19,6 +19,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { CategoryResultComponent } from './components/category-result/category-result.component';
 import { PageNavigatorComponent } from './components/page-navigator/page-navigator.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PageNavigatorComponent } from './components/page-navigator/page-navigat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ProductService, CartService],
   bootstrap: [AppComponent]
