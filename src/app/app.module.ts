@@ -15,6 +15,7 @@ import { CartProductComponent } from './components/cart-product/cart-product.com
 import { QuantityComponent } from './components/quantity/quantity.component';
 import { SlideProductsComponent } from './components/slide-products/slide-products.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CartProductComponent,
     QuantityComponent,
     SlideProductsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
