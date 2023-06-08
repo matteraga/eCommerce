@@ -1,1 +1,8 @@
-<app-slide-products></app-slide-products>
+<div class="container">
+    <ng-container *ngFor="let p of products; index as i">
+        <h2>{{categories[i]}}</h2>
+        <app-slide-products [products]="p"></app-slide-products>
+    </ng-container>
+</div>
+
+

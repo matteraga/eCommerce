@@ -1,12 +1,11 @@
-<div class="container">
-    <h2>Smartphone</h2>
-    <div class="d-flex justify-content-between">
-        <ng-container *ngFor="let p of sildeProducts">
-            <app-product [product]="p" class="px-5"></app-product>
+<div class="container d-flex flex-column">
+    <div class="align-self-end">
+        <a [routerLink]="''" class="text-decoration-none"><strong>Mostra tutti</strong></a>
+    </div>
+    <div class="d-flex justify-content-between ">   
+        <ng-container *ngFor="let p of products">
+            <app-product [product]="p" class="w-20"></app-product>
         </ng-container>
-        <div class="align-middle">
-            <a [routerLink]="''" class="text-decoration-none"><strong>Mostra</strong></a>
-        </div>
     </div>
 </div>
 

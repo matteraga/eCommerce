@@ -9,7 +9,11 @@ export class ProductService {
     new Product(2, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
     new Product(3, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
     new Product(4, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(5, 'NVIDIA RTX 3080', 'La nuova scheda video di NVIDIA', Category.Pc, 699.99, ['3080.jpeg']),
+    new Product(5, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(6, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(7, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(8, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(9, 'NVIDIA RTX 3080', 'La nuova scheda video di NVIDIA', Category.Pc, 699.99, ['3080.jpeg']),
   ];
 
   getById(id: number): Product | undefined {

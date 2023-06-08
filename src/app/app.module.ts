@@ -14,7 +14,6 @@ import { ProductPaginationComponent } from './components/product-pagination/prod
 import { CartProductComponent } from './components/cart-product/cart-product.component';
 import { QuantityComponent } from './components/quantity/quantity.component';
 import { SlideProductsComponent } from './components/slide-products/slide-products.component';
-import { CategoryComponent } from './components/category/category.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CartProductComponent,
     QuantityComponent,
     SlideProductsComponent,
-    CategoryComponent,
     NotFoundComponent
   ],
   imports: [
