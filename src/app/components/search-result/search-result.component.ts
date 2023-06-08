@@ -13,7 +13,7 @@ export class SearchResultComponent {
   searchString: string;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) {
-    this.searchString = this.route.snapshot.params['searchString'];
+    this.searchString = this.route.snapshot.params['search'];
     this.products = this.productService.getProductsByName(this.searchString);
   }
 }

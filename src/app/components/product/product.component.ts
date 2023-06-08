@@ -7,6 +7,5 @@ import {Product} from "../../models/product";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  @Input()
-  product?: Product;
+  @Input() product?: Product;
 }

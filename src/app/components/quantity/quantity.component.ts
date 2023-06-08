@@ -14,9 +14,7 @@ export class QuantityComponent {
   constructor() { }
 
   add() {
-    if (this.quantity < 5) {
-      this.quantity += 1;
-    }
+    this.quantity += 1;
     this.quantityEvent.emit(this.quantity);
   }
 

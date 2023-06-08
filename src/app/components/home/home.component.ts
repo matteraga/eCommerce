@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  categories: Category[] = [Category.Tv, Category.Smartphone];
+  categories: Category[] = [Category.Console, Category.Smartphone];
 
   products : Product[][] = [];
 

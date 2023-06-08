@@ -2,7 +2,7 @@
   <ng-container *ngIf="products; else noProducts">
     <div class="row">
       <ng-container *ngFor="let p of products">
-        <app-product class="col-3 mb-4" [product]="p"></app-product>
+        <app-product class="col-3" [product]="p"></app-product>
       </ng-container>
     </div>
   </ng-container>

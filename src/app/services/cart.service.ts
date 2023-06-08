@@ -4,19 +4,19 @@ import { ProductService } from "./product.service";
 
 @Injectable()
 export class CartService {
-    private cart: [id: number, quntity: number][] = [
-        [1, 2], [2, 3]
+    private cart: [id: number, quantity: number][] = [
+        [1, 2], [2, 2]
     ];
 
     constructor(private productService: ProductService) { }
 
     private find(id: number): number {
-        return this.cart.findIndex(product => product[0] === id)
+        return this.cart.findIndex(product => product[0] == id);
     }
 
     add(id: number, quantity: number) {
         let index = this.find(id);
-        if (index != -1) {
+        if (index == -1) {
             this.cart.push([id, quantity])
         } else {
             this.changeQuantity(id, this.cart.at(index)![1] + quantity)
@@ -27,6 +27,7 @@ export class CartService {
         let index = this.find(id)
         if (index != -1) {
             this.cart.splice(index, 1)
+            //this.changeQuantity(id, 0);
         }
     }
 
