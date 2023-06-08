@@ -1,10 +1,12 @@
 <div class="container my-4">
   <ng-container *ngIf="products; else noProducts">
+    <p>La tua ricerca "<span class="fw-bold">{{searchString}}</span>" ha prodotto i seguenti risultati:</p>
     <div class="row">
       <ng-container *ngFor="let p of products">
         <app-product class="col-3" [product]="p"></app-product>
       </ng-container>
     </div>
+    <app-page-navigator></app-page-navigator>
   </ng-container>
   <ng-template #noProducts>
     <div class="text-center">

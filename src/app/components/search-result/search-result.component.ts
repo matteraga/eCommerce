@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product} from "../../models/product";
 import {ProductService} from "../../services/product.service";
 import {ActivatedRoute} from "@angular/router";
@@ -8,12 +8,19 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })
-export class SearchResultComponent {
+export class SearchResultComponent implements OnInit {
   products: Product[];
   searchString: string;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) {
     this.searchString = this.route.snapshot.params['search'];
+
+    this.products = this.productService.getProductsByName(this.searchString);
+  }
+
+  ngOnInit(): void {
+    this.searchString = this.route.snapshot.params['search'];
+
     this.products = this.productService.getProductsByName(this.searchString);
   }
 }

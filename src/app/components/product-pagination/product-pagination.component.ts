@@ -1,7 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {Product} from "../../models/product";
-import {ProductService} from "../../services/product.service";
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-product-pagination',
@@ -11,4 +9,7 @@ import {ActivatedRoute} from "@angular/router";
 export class ProductPaginationComponent {
   @Input()
   products?: Product[];
+
+  @Input()
+  searchString: string = '';
 }
