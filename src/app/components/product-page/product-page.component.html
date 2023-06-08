@@ -1,0 +1,9 @@
+<div class="container">
+    <ng-container *ngIf="product">
+        <app-product-details [product]="product"></app-product-details>
+        <h1>Consigliati</h1>
+        <app-slide-products [products]="suggestedProducts" [category]="product.category"></app-slide-products>
+    </ng-container>
+</div>
+
+

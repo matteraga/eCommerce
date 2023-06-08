@@ -1,13 +1,12 @@
 <div class="container">
   <ng-container *ngIf="category && products && products.length > 0; else noProducts">
     <div class="d-flex flex-column">
-      <h2>{{this.category}}</h2>
       <div class="align-self-end">
         <a [routerLink]="['/categories', this.category]" class="text-decoration-none"><strong>Mostra tutti</strong></a>
       </div>
       <div class="d-flex justify-content-between ">
         <ng-container *ngFor="let p of products">
-          <app-product [product]="p" class="w-20"></app-product>
+          <app-product [product]="p" class="me-4" style="background-color: #fbfbfd;"></app-product>
         </ng-container>
       </div>
     </div>

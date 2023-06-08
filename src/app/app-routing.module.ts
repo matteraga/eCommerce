@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
-import {ProductPaginationComponent} from "./components/product-pagination/product-pagination.component";
 import { HomeComponent } from './components/home/home.component';
 import {NotFoundComponent} from "./components/not-found/not-found.component";
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import {SearchResultComponent} from "./components/search-result/search-result.component";
 import {CategoryResultComponent} from "./components/category-result/category-result.component";
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'products/:id', component: ProductDetailsComponent },
+  { path: 'products/:id', component: ProductPageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'search/:search', component: SearchResultComponent },
@@ -19,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

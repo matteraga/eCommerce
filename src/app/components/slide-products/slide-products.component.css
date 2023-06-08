@@ -1,4 +1,3 @@
-.w-20
-{
-    width: 20%;
+app-product:last-child{
+    margin-right: 0 !important; 
 }

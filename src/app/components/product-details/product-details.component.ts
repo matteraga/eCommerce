@@ -10,14 +10,12 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
-  product?: Product;
-  id: number = 0;
+  
+  @Input() product?: Product;
+  
   quantity : number = 1;
-  constructor(private productService: ProductService, private routerService: ActivatedRoute, private cartService: CartService)
-  {
-    this.id = routerService.snapshot.params['id'];
-    this.product = this.productService.getById(this.id);
-  }
+
+  constructor(private cartService : CartService){}
 
   addProduct()
   {

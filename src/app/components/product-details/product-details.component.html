@@ -1,32 +1,32 @@
-<div class="container">
-    <ng-container *ngIf="product">
-        <a [routerLink]="['/categories', product.category]" class=" cat">{{product.category}}</a>
-        <span class="font-size"> / </span>
-        <span class="model">{{product.name}}</span>
-            <div class="row border rounded">
-                <div class="d-flex justify-content-center align-self-center object-fit-cover ratio-1x1 col m-5 border rounded"> <!-- TODO -->
-                    <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="p-0 rounded w-50">
-                </div>
-                <div class="p-3 d-flex flex-column justify-content-between col mb-5">
-                    <div class="row mt-5">
-                        <div class="col">
-                            <span>{{product.description}}</span>
-                        </div>  
-                    </div>
-                    <div class="row my-5">
-                        <div class="col">
-                            <h3>€ {{product.price}}</h3>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col">
-                            <button class="btn btn-primary" (click)="addProduct()">Aggiungi</button>
-                        </div>
-                        <div class="col">
-                            <app-quantity (quantityEvent)="changeQuantity($event)"></app-quantity>
-                        </div>
-                    </div>
-                </div> 
+<ng-container *ngIf="product">
+    <a [routerLink]="['/categories', product.category]" class=" cat">{{product.category}}</a>
+    <span class="font-size"> / </span>
+    <span class="model">{{product.name}}</span>
+        <div class="row border rounded">
+            <div class="d-flex justify-content-center align-self-center object-fit-cover ratio-1x1 col m-5 border rounded"> <!-- TODO -->
+                <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="p-0 rounded w-50">
             </div>
-    </ng-container>
-</div>
+            <div class="p-3 d-flex flex-column justify-content-between col mb-5">
+                <div class="row mt-5">
+                    <div class="col">
+                        <span>{{product.description}}</span>
+                    </div>  
+                </div>
+                <div class="row my-5">
+                    <div class="col">
+                        <h3>€ {{product.price}}</h3>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col">
+                        <button class="btn btn-primary" (click)="addProduct()">Aggiungi</button>
+                    </div>
+                    <div class="col">
+                        <app-quantity (quantityEvent)="changeQuantity($event)"></app-quantity>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    <hr class="my-5">
+</ng-container>
+

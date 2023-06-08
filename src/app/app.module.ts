@@ -20,6 +20,7 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { CategoryResultComponent } from './components/category-result/category-result.component';
 import { PageNavigatorComponent } from './components/page-navigator/page-navigator.component';
 import {FormsModule} from "@angular/forms";
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {FormsModule} from "@angular/forms";
     ProductDetailsComponent,
     SearchResultComponent,
     CategoryResultComponent,
-    PageNavigatorComponent
+    PageNavigatorComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
