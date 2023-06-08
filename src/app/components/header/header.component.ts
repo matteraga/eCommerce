@@ -11,7 +11,7 @@ import { ProductService } from "../../services/product.service";
 })
 export class HeaderComponent {
   searchString: string = '';
-  title = 'eCommerce';
+  title = 'QuickDeals';
   categories = this.getCategories();
 
   constructor(private productService: ProductService, public cartService: CartService, private router: Router) { }

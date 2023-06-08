@@ -14,6 +14,7 @@ export class SearchResultComponent {
 
   constructor(private productService: ProductService, private route: ActivatedRoute) {
     this.searchString = this.route.snapshot.params['search'];
+
     this.products = this.productService.getProductsByName(this.searchString);
   }
 }
