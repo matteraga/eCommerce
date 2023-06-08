@@ -1,5 +1,5 @@
 <div class="btn-group">
-    <button type="button" class="btn btn-primary"><i class="bi bi-dash-square"></i></button>
-    <button type="button" class="btn btn-primary active px-3 mx-1">1</button>
-    <button type="button" class="btn btn-primary"><i class="bi bi-plus-square"></i></button>
+    <button type="button" class="btn btn-primary" (click)="remove()"><i class="bi bi-dash-square"></i></button>
+    <button type="button" class="btn btn-primary active px-3 mx-1">{{quantity}}</button>
+    <button type="button" class="btn btn-primary" (click)="add()"><i class="bi bi-plus-square"></i></button>
 </div>
