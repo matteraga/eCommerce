@@ -18,23 +18,24 @@
                 <div class="alert alert-warning text-center fw-semibold">
                     Checkout
                 </div>
-                <table class="table table-light w-75 m-auto mb-3">
+                <table class="table table-light text-start w-75 m-auto mb-3">
                     <tbody>
                         <tr>
                             <td>Subtotale</td>
-                            <td>{{totalCost | currency}} €</td>
+                            <td>{{subTotal | currency: "EUR" }}</td>
                         </tr>
                         <tr>
                             <td>Spedizione</td>
-                            <td>0,00 €</td>
+                            <td>€5,99</td>
                         </tr>
                         <tr>
                             <td>Totale</td>
-                            <td>0,00 €</td>
+                            <td>{{totalCost | currency: "EUR"}}</td>
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-success w-75" data-bs-toggle="modal" data-bs-target="#succesModal">
+                <button type="button" class="btn btn-success w-75" data-bs-toggle="modal" data-bs-target="#succesModal"
+                    (click)="clear()">
                     Conferma
                 </button>
             </div>
