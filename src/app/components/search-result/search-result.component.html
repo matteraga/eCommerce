@@ -1,1 +1,7 @@
-<app-product-pagination [searchString]="searchString" [products]="products"></app-product-pagination>
+<app-product-pagination
+  [searchString]="searchString"
+  [products]="products"
+  [page]="page"
+  [maxPage]="maxPage"
+  (changePageEvent)="changePage($event)"
+></app-product-pagination>

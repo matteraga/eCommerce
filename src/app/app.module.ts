@@ -18,7 +18,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { CategoryResultComponent } from './components/category-result/category-result.component';
-import { PageNavigatorComponent } from './components/page-navigator/page-navigator.component';
 import {FormsModule} from "@angular/forms";
 import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
@@ -40,7 +39,6 @@ import {TruncatePipe} from "./pipes/truncate.pipe";
     ProductDetailsComponent,
     SearchResultComponent,
     CategoryResultComponent,
-    PageNavigatorComponent,
     ProductPageComponent,
     AboutComponent,
     TruncatePipe
