@@ -1,3 +1,4 @@
+<!--TODO usare .card-->
 <div class="d-flex flex-column rounded bg-light rounded border border-secondary shadow-sm mb-4">
   <ng-container *ngIf="product; else noProduct">
     <a [href]="'/products/' + product.id" class="text-decoration-none text-dark">
@@ -6,7 +7,7 @@
       </div>
       <div class="p-3 border-top border-secondary">
         <span>{{product.category}}</span>
-        <h4>{{product.name}}</h4>
+        <h4>{{product.name | truncate}}</h4>
         <span>€ {{product.price}}</span>
       </div>
     </a>
