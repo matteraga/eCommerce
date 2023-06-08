@@ -11,4 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 export class ProductPaginationComponent {
   @Input()
   products?: Product[];
+
+  @Input()
+  searchString: string = '';
 }
