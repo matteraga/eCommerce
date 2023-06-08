@@ -52,4 +52,8 @@ export class ProductService {
   productPageCount(search: string, pageSize: number = 20): number {
     return Math.ceil(this.products.filter(p => p.name.toLowerCase().includes(search.toLowerCase())).length / pageSize);
   }
+
+  categoryPageCount(category: Category, pageSize: number = 20): number {
+    return Math.ceil(this.products.filter(p => p.category == category).length / pageSize);
+  }
 }
