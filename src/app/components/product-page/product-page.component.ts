@@ -13,7 +13,7 @@ export class ProductPageComponent {
   product? : Product;
 
   suggestedProducts? : Product[];
-  nSuggestedProducts: number = 6;
+  nSuggestedProducts: number = 3;
 
   constructor(private productService: ProductService, private routeService: ActivatedRoute)
   {

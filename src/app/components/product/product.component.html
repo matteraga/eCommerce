@@ -1,8 +1,8 @@
 <div class="card rounded-4 bg-light border mb-4 mw-100">
   <ng-container *ngIf="product; else noProduct">
     <a [routerLink]="['/products', product.id]">
-      <div class="img-container-medium d-flex justify-content-center align-items-center p-3">
-        <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="img-fit">
+      <div class="img-container-medium d-flex justify-content-center align-items-center p-3 m-0">
+        <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="img-fit justify-content-center">
       </div>
     </a>
     <div class="card-body">

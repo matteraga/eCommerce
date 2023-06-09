@@ -14,11 +14,12 @@ export class HomeComponent {
 
   featuredCategories: Category[] = [Category.Console, Category.Smartphone];
   featuredProducts : Product[][] = [];
+  nFeaturedProducts : number = 3;
 
   constructor(private productService : ProductService)
   {
     for(let c of this.featuredCategories)
-      this.featuredProducts.push(this.productService.getProductsByCategory(c, 1, 4));
+      this.featuredProducts.push(this.productService.getProductsByCategory(c, 1, this.nFeaturedProducts));
 
     this.offerProduct = this.productService.getById(this.offerId);
   }
