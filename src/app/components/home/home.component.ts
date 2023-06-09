@@ -12,12 +12,18 @@ export class HomeComponent {
   private offerId : number = 2;
   offerProduct? : Product;
 
-  featuredCategories: Category[] = [Category.Console, Category.Smartphone];
+  featuredCategories: Category[] = [];
   featuredProducts : Product[][] = [];
   nFeaturedProducts : number = 3;
+  nRowCategories : number = 4
 
-  constructor(private productService : ProductService)
+  constructor(private productService: ProductService)
   {
+    for (let i = 0; i < this.nRowCategories; i++) {
+      const rndCategory = this.productService.getRandomCategory()
+      this.featuredCategories.push(rndCategory)
+    }
+
     for(let c of this.featuredCategories)
       this.featuredProducts.push(this.productService.getProductsByCategory(c, 1, this.nFeaturedProducts));
 
