@@ -33,7 +33,7 @@ export class CartService {
         if (index == -1) {
             this.cart.push([id, quantity])
         } else {
-            this.changeQuantity(id, this.cart.at(index)![1] + quantity)
+            this.changeQuantity(id, ((this.cart.at(index)![1] + quantity) > 99) ? 99 : this.cart.at(index)![1] + quantity);
         }
         this.updateNumberOfItems()
     }
@@ -42,7 +42,6 @@ export class CartService {
         let index = this.find(id)
         if (index != -1) {
             this.cart.splice(index, 1)
-            //this.changeQuantity(id, 0);
         }
         this.updateNumberOfItems()
     }
