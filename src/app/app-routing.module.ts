@@ -7,6 +7,7 @@ import {SearchResultComponent} from "./components/search-result/search-result.co
 import {CategoryResultComponent} from "./components/category-result/category-result.component";
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { AboutComponent } from './components/about/about.component';
+import {CategorySearchResultComponent} from "./components/category-search-result/category-search-result.component";
 
 const routes: Routes = [
   { path: '', title: "QuickDeals | Home", component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'products/:id', title: "QuickDeals | Dettagli prodotto", component: ProductPageComponent },
   { path: 'shop', title: "QuickDeals | Negozio", component: SearchResultComponent },
   { path: 'shop/categories/:category', title: "QuickDeals | Prodotti per categoria", component: CategoryResultComponent },
+  { path: 'shop/categories/:category/:search', title: "QuickDeals | Ricerca prodotto per categoria", component: CategorySearchResultComponent },
   { path: 'shop/:search', title: "QuickDeals | Ricerca", component: SearchResultComponent },
   { path: '**', title: "QuickDeals | 404 - Pagina non trovata", component: NotFoundComponent }
 ];

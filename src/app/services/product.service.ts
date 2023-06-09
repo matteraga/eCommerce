@@ -99,6 +99,14 @@ export class ProductService {
     new Product(9, 'NVIDIA RTX 3080', 'La nuova scheda video di NVIDIA', Category.Pc, 699.99, ['3080.jpg']),
   ];
 
+  private filterCategory = (p: Product, category: Category): boolean => {
+    return p.category == category;
+  }
+
+  private filterName = (p: Product, name: string): boolean => {
+    return p.name.toLowerCase().includes(name.toLowerCase());
+  }
+
   getById(id: number): Product | undefined {
     return this.products.find(p => p.id == id);
   }
@@ -109,6 +117,10 @@ export class ProductService {
 
   getProductsByCategory(category: Category, page: number = 1, pageSize: number = 20): Product[] {
     return this.getProducts(p => p.category == category, page, pageSize);
+  }
+
+  getProductsInCategory(category: Category, search: string, page: number = 1, pageSize: number = 20): Product[] {
+    return this.getProducts(p => p.category == category && p.name.toLowerCase().includes(search.toLowerCase()), page, pageSize);
   }
 
   getProductsByName(search: string, page: number = 1, pageSize: number = 20): Product[] {
@@ -127,16 +139,20 @@ export class ProductService {
   }
 
   getRandomProduct(category: Category = this.getRandomCategory()): Product {
-    const products = this.getProductsByCategory(category);  // Get random only from first page
+    const products = this.getProductsByCategory(category);  // Get random only from the first page
     const randomIndex = Math.floor(Math.random() * products.length);
     return products[randomIndex];
   }
 
   productPageCount(search: string, pageSize: number = 20): number {
-    return Math.ceil(this.products.filter(p => p.name.toLowerCase().includes(search.toLowerCase())).length / pageSize);
+    return Math.ceil(this.products.filter(p => this.filterName(p, search)).length / pageSize);
   }
 
   categoryPageCount(category: Category, pageSize: number = 20): number {
-    return Math.ceil(this.products.filter(p => p.category == category).length / pageSize);
+    return Math.ceil(this.products.filter(p => this.filterCategory(p, category)).length / pageSize);
+  }
+
+  productsInCategoryPageCount(category: Category, searchString: string, pageSize: number = 20): number {
+    return Math.ceil(this.products.filter(p => this.filterCategory(p, category) && this.filterName(p, searchString)).length / pageSize);
   }
 }

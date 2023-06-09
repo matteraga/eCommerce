@@ -11,7 +11,7 @@ import {Category} from "../../models/category";
 })
 export class CategoryResultComponent {
   products: Product[] = [];
-  category?: Category;
+  category: Category = Category.All;
   page: number;
   maxPage: number = 1;
 
