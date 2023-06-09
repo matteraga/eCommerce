@@ -22,6 +22,7 @@ import {FormsModule} from "@angular/forms";
 import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import {TruncatePipe} from "./pipes/truncate.pipe";
+import { CategorySearchResultComponent } from './components/category-search-result/category-search-result.component';
 import { DigitOnlyModule } from '@uiowa/digit-only';
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DigitOnlyModule } from '@uiowa/digit-only';
     CategoryResultComponent,
     ProductPageComponent,
     AboutComponent,
-    TruncatePipe
+    TruncatePipe,
+    CategorySearchResultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Product} from "../../models/product";
 import {ProductService} from "../../services/product.service";
 import {ActivatedRoute} from "@angular/router";
@@ -9,17 +9,19 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./search-result.component.css']
 })
 export class SearchResultComponent {
-  products: Product[];
-  searchString: string;
+  products: Product[] = [];
+  searchString: string = "";
   page: number;
-  maxPage: number;
+  maxPage: number = 1;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) {
-    this.searchString = this.route.snapshot.params['search'] || "";
+    this.route.params.subscribe(params => {
+      this.searchString = params['search'] || "";
+      this.products = this.productService.getProductsByName(this.searchString);
+      this.maxPage = this.productService.productPageCount(this.searchString);
+    });
 
-    this.products = this.productService.getProductsByName(this.searchString);
     this.page = 1;
-    this.maxPage = this.productService.productPageCount(this.searchString);
   }
 
   changePage(page: number) {

@@ -17,10 +17,12 @@ export class HeaderComponent {
   constructor(private productService: ProductService, public cartService: CartService, private router: Router) { }
 
   search(): void {
-    if (this.searchString == '')
-      this.router.navigate(['/shop']);
-    else
+    if (this.category == 'Categoria' || this.category == 'Tutte')
       this.router.navigate(['/shop', this.searchString]);
+    else if (this.searchString != '')
+      this.router.navigate(['/shop/categories', this.category, this.searchString]);
+    else
+      this.router.navigate(['/shop/categories', this.category]);
   }
 
   getCategories(): Category[] {
