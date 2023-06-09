@@ -23,6 +23,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import {TruncatePipe} from "./pipes/truncate.pipe";
 import { CategorySearchResultComponent } from './components/category-search-result/category-search-result.component';
+import { DigitOnlyModule } from '@uiowa/digit-only';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { CategorySearchResultComponent } from './components/category-search-resu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    DigitOnlyModule
   ],
   providers: [ProductService, CartService],
   bootstrap: [AppComponent]
