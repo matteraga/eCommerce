@@ -8,7 +8,7 @@ import {Product} from "../../models/product";
 })
 export class ProductPaginationComponent {
   @Input()
-  products?: Product[];
+  products: Product[] = [];
 
   @Input()
   searchString?: string;
