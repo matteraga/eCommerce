@@ -14,8 +14,8 @@ export class SearchResultComponent {
   page: number;
   maxPage: number = 1;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) {
-    this.route.params.subscribe(params => {
+  constructor(private productService: ProductService, private routeService: ActivatedRoute) {
+    this.routeService.params.subscribe(params => {
       this.searchString = params['search'] || "";
       this.products = this.productService.getProductsByName(this.searchString);
       this.maxPage = this.productService.productPageCount(this.searchString);

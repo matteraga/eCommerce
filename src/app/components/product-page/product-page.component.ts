@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
-import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -16,12 +15,14 @@ export class ProductPageComponent {
   suggestedProducts? : Product[];
   nSuggestedProducts: number = 6;
 
-
-  constructor(private productService: ProductService, private routerService: ActivatedRoute, private cartService: CartService)
+  constructor(private productService: ProductService, private routeService: ActivatedRoute)
   {
-    this.id = routerService.snapshot.params['id'];
-    this.product = this.productService.getById(this.id);
-    if(this.product) this.suggestedProducts = this.productService.getProductsByCategory(this.product.category,1,this.nSuggestedProducts);
+    this.routeService.params.subscribe(params => {
+      this.id = +params['id'] || -1;
+      this.product = this.productService.getById(this.id);
+      if (this.product)
+        this.suggestedProducts = this.productService.getProductsByCategory(this.product.category,1, this.nSuggestedProducts);
+    });
   }
 
 }
