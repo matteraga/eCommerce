@@ -18,22 +18,22 @@ export class ProductService {
     new Product(11, 'Nintendo Switch', 'La nuova console Nintendo Switch', Category.Console, 999.99, ['ns_1.png']),
     new Product(12, 'Xbox One', 'La nuova console Xbox One', Category.Console, 999.99, ['xboxOne_3.png', 'xboxOne_2.png']),
     new Product(13, 'FHD SMART 32" T5372 TV 2020', 'FHD SMART 32" T5372 TV 2020', Category.Tv, 299.99, ['FHDSmart32.png']),
-    new Product(14, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(4, 'iPhone 12 c', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(5, 'iPhone 12 d', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(6, 'iPhone 12 e', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
-    new Product(7, 'iPhone 12 f', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(14, 'Xiaomi TV Q1E 55', 'Xiaomi TV Q1E 55', Category.Tv, 799.90, ['txXiaomi.png']),
+    new Product(15, 'Samsung Neo QLED 8k', 'Samsung Neo QLED 8k', Category.Tv, 1799.99, ['NeoTv.png']),
+    new Product(16, 'Mi TV P1 43"', 'Mi TV P1 43"', Category.Tv, 449.89, ['MiTv.png']),
+    new Product(17, 'TCL P615 4K Android TV With TCL AI IN', 'TCL P615 4K Android TV With TCL AI IN', Category.Tv, 299.49, ['TclTv.png']),
+    new Product(18, 'Samsung Smart TV 65" 4K Full HD', 'Samsung Smart TV 65" 4K Full HD', Category.Tv, 1299.49, ['samSmartTv.png']),
+    new Product(19, 'TCL TV P635 | 4K HDR Google TV', 'Buy TCL TV P635 | 4K HDR Google TV', Category.Tv, 292.77, ['TclTv_2.png']),
+    new Product(20, 'AMD Ryzen 9 PC Gaming', 'PC GAMING AMD Ryzen 9 5900X 12 Core 3,7/4,8GHz 32GB DDR4 1TB SSD Radeon 6700XT 8GB D6 WI FI Windows 11 PRO', Category.Pc, 2430.00, ['pcGaming_1.png']),
+    new Product(21, 'XTREME GAMER PC DIABLO V33', 'AMD Ryzen 7 7700X @ 5,6 GHz; Water Cooling 280 RGB; 32GB DDR 5 RAM with RGB; 1TB SSD M.2 + 1TB HDD; Bluetooth & WLAN; NVIDIA GeForce RTX 4070 TI OC', Category.Pc, 3108.11, ['pcGaming_2.png']),
+    new Product(22, 'PC Gaming SUPER | Gorillab', 'Il nuovo iPhone 12', Category.Pc, 3375.14, ['pcGaming_3.png']),
+    new Product(23, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(24, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(25, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(26, 'iPhone 12 c', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(27, 'iPhone 12 d', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(28, 'iPhone 12 e', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
+    new Product(29, 'iPhone 12 f', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
     new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
     new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
     new Product(8, 'iPhone 12 g', 'Il nuovo iPhone 12', Category.Smartphone, 999.99, ['iphone12.jpeg']),
@@ -115,19 +115,19 @@ export class ProductService {
     return Object.values(Category);
   }
 
-  getProductsByCategory(category: Category, page: number = 1, pageSize: number = 20): Product[] {
+  getProductsByCategory(category: Category, page: number = 1, pageSize: number = 18): Product[] {
     return this.getProducts(p => p.category == category, page, pageSize);
   }
 
-  getProductsInCategory(category: Category, search: string, page: number = 1, pageSize: number = 20): Product[] {
+  getProductsInCategory(category: Category, search: string, page: number = 1, pageSize: number = 18): Product[] {
     return this.getProducts(p => p.category == category && p.name.toLowerCase().includes(search.toLowerCase()), page, pageSize);
   }
 
-  getProductsByName(search: string, page: number = 1, pageSize: number = 20): Product[] {
+  getProductsByName(search: string, page: number = 1, pageSize: number = 18): Product[] {
     return this.getProducts(p => p.name.toLowerCase().includes(search.toLowerCase()), page, pageSize);
   }
 
-  private getProducts(predicate: (p: Product) => boolean, page: number = 1, pageSize: number = 20): Product[] {
+  private getProducts(predicate: (p: Product) => boolean, page: number = 1, pageSize: number = 18): Product[] {
     return this.products
       .filter(predicate)
       .slice((page - 1) * pageSize, page * pageSize);
@@ -144,15 +144,15 @@ export class ProductService {
     return products[randomIndex];
   }
 
-  productPageCount(search: string, pageSize: number = 20): number {
+  productPageCount(search: string, pageSize: number = 18): number {
     return Math.ceil(this.products.filter(p => this.filterName(p, search)).length / pageSize);
   }
 
-  categoryPageCount(category: Category, pageSize: number = 20): number {
+  categoryPageCount(category: Category, pageSize: number = 18): number {
     return Math.ceil(this.products.filter(p => this.filterCategory(p, category)).length / pageSize);
   }
 
-  productsInCategoryPageCount(category: Category, searchString: string, pageSize: number = 20): number {
+  productsInCategoryPageCount(category: Category, searchString: string, pageSize: number = 18): number {
     return Math.ceil(this.products.filter(p => this.filterCategory(p, category) && this.filterName(p, searchString)).length / pageSize);
   }
 }

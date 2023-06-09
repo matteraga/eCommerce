@@ -5,7 +5,7 @@ export enum Category {
   Headphones = 'Cuffie',
   Monitor = 'Monitor',
   Tablet = 'Tablet',
-  BatteryCharger = 'Carica batterie',
+  PcComponents = 'Componenti Pc',
   Smartphone = 'Telefoni',
   Keyboard = 'Tastiere',
   Mouse = 'Mouse',
