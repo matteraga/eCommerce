@@ -17,10 +17,10 @@
           </button>
         </ng-container>
       </div>
-      <div class="carousel-inner w-50">
+      <div class="carousel-inner w-75 ">
         <ng-container *ngFor="let p of product.images; index as i">
           <div class="carousel-item " [class.active]="i == 0">
-            <img [src]="'assets/img/' + p" alt="Immagine non trovata" class="d-block w-100 p-4  ">
+            <img [src]="'assets/img/' + p" alt="Immagine non trovata" class="d-flex align-self-center w-100 p-4">
             <div class="carousel-caption d-none d-md-block"></div>
           </div>
         </ng-container>
