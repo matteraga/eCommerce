@@ -6,7 +6,7 @@ import {Category} from "../models/category";
 export class ProductService {
   products: Product[] = [
     new Product(1, 'PS5', 'Una tra le migliori console di sempre', Category.Console, 499.99, ['ps5_1.png', 'ps5_2.png', 'ps5_3.png']),
-    new Product(2, 'iPhone 12', 'Il nuovo iPhone 12', Category.Smartphone, 599.99, ['iphone12_1.png', 'iphone12_2.png', 'iphone12_3.png'], 472.98),
+    new Product(2, 'iPhone 12', "L'iPhone 12 è un smartphone di alta gamma sviluppato da Apple. Con un design elegante e sofisticato, l'iPhone 12 offre un'esperienza utente eccezionale e prestazioni potenti.", Category.Smartphone, 599.99, ['iphone12_1.png', 'iphone12_2.png', 'iphone12_3.png'], 472.98),
     new Product(3, 'iPhone 13', 'Il nuovo iPhone 13', Category.Smartphone, 761.99, ['iphone13_2.png', 'iphone13_3.png']),
     new Product(4, 'iPhone 13 Pro', 'Il nuovo iPhone 13 Pro', Category.Smartphone, 810.89, ['iphone13Pro_1_.png', 'iphone13Pro_1.png','iphone13Pro_2.png','iphone13Pro_3.png',]),
     new Product(5, 'iPhone 14 Pro', 'Il nuovo iPhone 14 Pro', Category.Smartphone, 1109.99, ['iphone14Pro_1.png', 'iphone14Pro_2.png', 'iphone14pro_4.png']),
