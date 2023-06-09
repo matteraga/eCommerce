@@ -4,14 +4,14 @@ import { ProductService } from "./product.service";
 
 @Injectable()
 export class CartService {
-    private cart: [id: number, quantity: number][] = [
-        [1, 2], [2, 2]
-    ];
+    private cart: [id: number, quantity: number][] = [];
 
     private _numberOfItems: number = 0;
+
     public get numberOfItems() {
         return this._numberOfItems;
     }
+
     public set numberOfItems(n: number) {
         this._numberOfItems = n;
     }

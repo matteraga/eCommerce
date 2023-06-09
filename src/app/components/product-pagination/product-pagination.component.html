@@ -6,7 +6,7 @@
     <p *ngIf="category && !searchString">Prodotti per la categoria <span class="fw-bold">{{category}}</span>:</p>
     <div class="row">
       <ng-container *ngFor="let p of products">
-        <app-product class="col-3" [product]="p"></app-product>
+        <app-product class="col-sm-12 col-md-6 col-lg-4" [product]="p"></app-product>
       </ng-container>
     </div>
     <!-- Pages Navigator -->
