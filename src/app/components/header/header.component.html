@@ -11,7 +11,7 @@
         <select class="input-group-text" id="search-addon" (change)="search()" [(ngModel)]="category" name="category">
           <option hidden>Categoria</option>
           <ng-container *ngFor="let c of categories">
-            <option [value]="c">{{c}}</option>
+            <option [value]="c" class="text-start">{{c}}</option>
           </ng-container>
         </select>
         <input [(ngModel)]="searchString" name="search" type="text" class="form-control search-input" placeholder="Cosa vuoi acquistare?" aria-describedby="search-addon">
