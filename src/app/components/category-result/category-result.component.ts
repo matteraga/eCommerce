@@ -10,20 +10,24 @@ import {Category} from "../../models/category";
   styleUrls: ['./category-result.component.css']
 })
 export class CategoryResultComponent {
-  products: Product[];
-  category: Category;
+  products: Product[] = [];
+  category?: Category;
   page: number;
-  maxPage: number;
+  maxPage: number = 1;
 
   constructor(private productService: ProductService, private routeService: ActivatedRoute) {
-    this.category = this.routeService.snapshot.params['category'] as Category
-    this.page = 1;
+    this.routeService.params.subscribe(params => {
+      this.category = params['category'] as Category;
+      this.products = this.productService.getProductsByCategory(this.category);
+      this.maxPage = this.productService.categoryPageCount(this.category);
+    });
 
-    this.products = this.productService.getProductsByCategory(this.category, this.page);
-    this.maxPage = this.productService.categoryPageCount(this.category);
+    this.page = 1;
   }
 
   changePage(page: number) {
+    if (!this.category) return;
+
     this.page = page;
     this.products = this.productService.getProductsByCategory(this.category, this.page);
   }

@@ -1,5 +1,5 @@
 <div class="container my-4">
-  <ng-container *ngIf="products; else noProducts">
+  <ng-container *ngIf="products.length > 0; else noProducts">
     <h2 *ngIf="!searchString && !category">Negozio</h2>
     <p *ngIf="searchString">La tua ricerca "<span class="fw-bold">{{searchString}}</span>" ha prodotto i seguenti risultati:</p>
     <p *ngIf="category">Prodotti per la categoria <span class="fw-bold">{{category}}</span></p>
