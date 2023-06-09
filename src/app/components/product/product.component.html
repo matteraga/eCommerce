@@ -1,16 +1,33 @@
-<!--TODO usare .card-->
-<div class="d-flex flex-column rounded bg-light rounded border border-secondary shadow-sm mb-4">
+<div class="d-flex flex-column rounded rounded-5 shadow-lg mb-4">
   <ng-container *ngIf="product; else noProduct">
-    <a [href]="'/products/' + product.id" class="text-decoration-none text-dark">
-      <div class="object-fit-cover ratio-1x1"> <!-- TODO mettere che tutte le immagini siano grandi uguali (e in caso vengano tagliate) -->
-        <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="container p-0 rounded">
-      </div>
-      <div class="p-3 border-top border-secondary">
-        <span [routerLink]="['/shop/categories', product.category]">{{product.category}}</span>
-        <h4>{{product.name | truncate}}</h4>
-        <span>€&nbsp;{{product.price}}</span>
-      </div>
-    </a>
+    <div class="card bg-light border-0">
+      <a (click)="goToProductDetail()" class="text-decoration-none text-dark pe-auto">
+        <div class="img-container-medium p-3">
+          <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="card-img-top img-fit">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{product.name | truncate}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex">
+              <button class="btn btn-primary">Vedi</button>
+              <button class="ms-2 btn btn-outline-success"><i class="bi bi-cart-plus"></i></button>
+            </div>
+            <div class="d-flex flex-column">
+              <span *ngIf="product.offertPrice"
+                    class="fs-6 text-decoration-line-through me-2">{{product.price | currency:"EUR"}}</span>
+              <span [class.visible.fs-4]="!product.offertPrice"
+                    [class.text-danger]="product.offertPrice"
+                    [class.fs-6]="product.offertPrice"
+                    [class.fs-4]="!product.offertPrice"
+                    [class.fw-bold]="product.offertPrice">
+                {{product.offertPrice || product.price | currency:"EUR"}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
   </ng-container>
   <ng-template #noProduct>
     <span>Prodotto non trovato</span>
