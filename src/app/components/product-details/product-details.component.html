@@ -1,7 +1,7 @@
 <ng-container *ngIf="product">
   <a [routerLink]="['/shop/categories', product.category]" class="fs-5">{{product.category}}</a>
   <span class="fs-5"> / </span>
-  <span class="fs-5 text-dark">{{product.name}}</span>
+  <span class="fs-5 text-dark fw-bold">{{product.name}}</span>
   <div class="row shadow-sm rounded-4 mt-4 bg-light border border-light">
     <div class="col-6">
       <div id="carouselExampleCaptions"
