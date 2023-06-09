@@ -115,19 +115,19 @@ export class ProductService {
     return Object.values(Category);
   }
 
-  getProductsByCategory(category: Category, page: number = 1, pageSize: number = 20): Product[] {
+  getProductsByCategory(category: Category, page: number = 1, pageSize: number = 18): Product[] {
     return this.getProducts(p => p.category == category, page, pageSize);
   }
 
-  getProductsInCategory(category: Category, search: string, page: number = 1, pageSize: number = 20): Product[] {
+  getProductsInCategory(category: Category, search: string, page: number = 1, pageSize: number = 18): Product[] {
     return this.getProducts(p => p.category == category && p.name.toLowerCase().includes(search.toLowerCase()), page, pageSize);
   }
 
-  getProductsByName(search: string, page: number = 1, pageSize: number = 20): Product[] {
+  getProductsByName(search: string, page: number = 1, pageSize: number = 18): Product[] {
     return this.getProducts(p => p.name.toLowerCase().includes(search.toLowerCase()), page, pageSize);
   }
 
-  private getProducts(predicate: (p: Product) => boolean, page: number = 1, pageSize: number = 20): Product[] {
+  private getProducts(predicate: (p: Product) => boolean, page: number = 1, pageSize: number = 18): Product[] {
     return this.products
       .filter(predicate)
       .slice((page - 1) * pageSize, page * pageSize);
@@ -144,15 +144,15 @@ export class ProductService {
     return products[randomIndex];
   }
 
-  productPageCount(search: string, pageSize: number = 20): number {
+  productPageCount(search: string, pageSize: number = 18): number {
     return Math.ceil(this.products.filter(p => this.filterName(p, search)).length / pageSize);
   }
 
-  categoryPageCount(category: Category, pageSize: number = 20): number {
+  categoryPageCount(category: Category, pageSize: number = 18): number {
     return Math.ceil(this.products.filter(p => this.filterCategory(p, category)).length / pageSize);
   }
 
-  productsInCategoryPageCount(category: Category, searchString: string, pageSize: number = 20): number {
+  productsInCategoryPageCount(category: Category, searchString: string, pageSize: number = 18): number {
     return Math.ceil(this.products.filter(p => this.filterCategory(p, category) && this.filterName(p, searchString)).length / pageSize);
   }
 }
