@@ -1,32 +1,30 @@
-<div class="d-flex flex-column rounded rounded-5 shadow-lg mb-4">
+<div class="card rounded-4 bg-light border mb-4 mw-100">
   <ng-container *ngIf="product; else noProduct">
-    <div class="card bg-light border-0">
-      <a (click)="goToProductDetail()" class="text-decoration-none text-dark pe-auto">
-        <div class="img-container-medium p-3">
-          <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="card-img-top img-fit">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{product.name | truncate}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>
-          <div class="d-flex justify-content-between">
-            <div class="d-flex">
-              <button class="btn btn-primary">Vedi</button>
-              <button class="ms-2 btn btn-outline-success"><i class="bi bi-cart-plus"></i></button>
-            </div>
-            <div class="d-flex flex-column">
-              <span *ngIf="product.offertPrice"
-                    class="fs-6 text-decoration-line-through me-2">{{product.price | currency:"EUR"}}</span>
-              <span [class.visible.fs-4]="!product.offertPrice"
-                    [class.text-danger]="product.offertPrice"
-                    [class.fs-6]="product.offertPrice"
-                    [class.fs-4]="!product.offertPrice"
-                    [class.fw-bold]="product.offertPrice">
-                {{product.offertPrice || product.price | currency:"EUR"}}
-              </span>
-            </div>
+    <a [routerLink]="['/products', product.id]">
+      <div class="img-container-medium">
+        <img [src]="'assets/img/' + product.images[0]" alt="Immagine non trovata" class="img-fit">
+      </div>
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">{{product.name | truncate}}</h5>
+      <h6 class="card-subtitle mb-2">{{product.category}}</h6>
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-primary" (click)="goToProductDetail()">Vedi</button>
+            <button class="ms-2 btn btn-outline-success"><i class="bi bi-cart-plus"></i></button>
+          </div>
+          <div class="col d-flex my-auto">
+            <span *ngIf="product.offertPrice" class="fs-6 text-decoration-line-through me-2">{{product.price |
+              currency:"EUR"}}</span>
+            <span [class.visible]="!product.offertPrice" [class.text-danger]="product.offertPrice"
+              [class.fs-6]="product.offertPrice" [class.fs-4]="!product.offertPrice"
+              [class.fw-bold]="product.offertPrice">
+              {{product.offertPrice || product.price | currency:"EUR"}}
+            </span>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   </ng-container>
   <ng-template #noProduct>
