@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-quantity',
@@ -11,8 +10,6 @@ export class QuantityComponent {
   quantity: number = 1;
 
   @Output() quantityEvent = new EventEmitter();
-
-  constructor() { }
 
   add() {
     if (this.quantity < 99) {
